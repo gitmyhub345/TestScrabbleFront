@@ -1,0 +1,292 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+Created on : Jan 25, 2018, 12:15:58 PM
+Author     : Rider1
+*/
+
+
+.divContainer{
+        width: 820px;
+        padding-left: 0%;
+        padding-right: 0%;
+        background-color: #FFF;
+        /*height: 520px;
+        overflow-y: auto;*/
+        text-align: left;
+        padding-left: 10%;
+}
+.row{
+        display: block;
+        width: 100%;
+        background-color: #FFF;
+        text-align: left;
+
+}
+.row1{
+        display: block;
+        width: 100%;
+        background-color: #EEE;
+        text-align: left;
+
+}
+#board {
+        width: 395px;
+        height: 395px;
+        border: 2px solid blue;
+        display: inline-block;
+        float: left;
+        vertical-align: top;
+}
+#hand {
+        width: 31px;
+        height: 186px;
+        border: 2px solid red;
+        display: inline-block;
+        float: left;
+        vertical-align: top;
+}
+div.boardTileHolder { 
+        height: 26px; 
+        width: 26px; 
+        background-color: #aaa; 
+        border: 1px solid #00ff00;
+        display: left; 
+        float: left;
+        padding: 2px;
+        vertical-align: middle;
+}
+div.staticsection {
+    background-color: rgba(200,200,255,0.0);
+    height: 395px; 
+    width: 180px; 
+    overflow-y: auto;
+    margin-left: 15px;
+    display: inline-block;
+    float: left;
+    vertical-align: top;
+}
+div#boardcontainer{
+        padding-left: 0px;
+        display: inline-block;
+        float: left;
+        vertical-align: top;
+        margin-left: 15px;
+        margin-right: 15px;
+}
+div#status{
+        height: 100%;
+        width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+}
+div.handTileHolder {
+        height: 26px; 
+        width: 26px; 
+        background-color: #aaa; 
+        border: 1px solid #00ff00; 
+        float: left;
+        padding: 2px;
+
+}
+.draggable{
+        height: 21px; 
+        width: 21px;
+        /* border: 1px solid blue;*/
+        background-color: #88FFBB;
+        background-image: url('../images/tileholder.png');
+        background-size: 21px 21px;
+        line-height: 21px;
+        text-align: center;
+}
+.draggable:hover {
+        cursor: pointer;
+}
+.draggable:focus{
+        cursor: default;
+}
+.nondraggable{
+        background-color: #FF8888;
+        background-image: url('../images/tileholder.png');
+        background-size: 21px 21px;
+        line-height: 21px;
+        text-align: center;
+}
+.tempnondraggable{
+        background-color: #88FF88;
+        background-image: url('../images/tileholder.png');
+        background-size: 21px 21px;
+        line-height: 21px;
+        text-align: center;
+    
+}
+div.tws {
+        background-color: #ff0000;
+}
+div.dws {
+        background-color: #000088;
+}
+div.tls {
+        background-color: #008888;
+}
+div.dls {
+        background-color: #0000ff;}
+
+div#newgame {
+        display:none;
+        position: fixed;
+        z-index:1;
+        padding-top: 100px;
+        left:0px;
+        top:0px;
+        width: 100%;
+        height: 100%;
+        overflow:auto;
+        background-color: rgba(0,100,0,0.8);
+}
+.actions {
+        border: 2px solid #00ff00;
+        float: left;
+        display: inline-block;
+        width: 390px;
+        /*height: 85px;*/
+        vertical-align: top;
+        /*padding-left: 180px;*/
+        margin-left: 200px;
+}
+input[type='button']{
+        /*border: 2px solid #55AAFF;*/
+        width: 100px;
+        height: 27px;
+        background-color: #55aaee;
+        background-size: 96px 23px;
+        background-image: url('../images/buttonBG.png');
+}
+div#newgameform{
+        position: relative;
+        border: 1px solid #888;
+        border-radius: 11px 11px 10px 10px;
+        background-color: rgba(150,175,150,0.8);
+        padding-top: 25px;
+        padding-left: 10%;
+        height: 250px;
+        width: 450px;
+        /*width: 80%;*/
+        margin: auto;
+        box-shadow: 15px 10px 108px 0 rgba(200,100,2,0.7), 0px 6px 20px 0 rgba(0,0,0,0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration:0.4s;
+}
+div#challengeScreen {
+    display:none;
+    position: fixed;
+    z-index:1;
+    /*padding-top: 250px;
+    padding-left: 400px;*/
+    left:0px;
+    top:0px;
+    width: 100%;
+    height: 100%;
+    overflow:auto;
+    background-color: rgba(50,50,50,0.4);
+}
+div#challengeForm{
+    position: relative;
+    border: 1px solid #CCC;
+    left: 400px;
+    top: 400px;
+    width: 210px;
+    height: 150px;
+    font-family: arial;
+    text-align: center;
+    color: #FF0000;
+    background-color: rgba(175,175,175,0.9);
+}
+div#challengeConfirmationScreen {
+        display:none;
+        position: fixed;
+        z-index:1;
+        padding-top: 100px;
+        left:0px;
+        top:0px;
+        width: 100%;
+        height: 100%;
+        overflow:auto;
+        background-color: rgba(25,50,25,0.8);
+}
+.label{
+	color: #FF0088;
+	font-weight: bold;
+	font-family: arial;
+	font-size: 10px;
+}
+.stats{
+	color: #8800FF;
+	font-weight: bold;
+	font-family: arial;
+	font-size: 10px;
+}
+.ui-menu { 
+        width: 100px; 
+        background-color: rgba(255,255,255,0.8);
+}
+div#statsScreen{
+    /*display:none
+    position: fixed;
+    z-index:1;
+    padding-top: 100px;
+    left:0px;
+    top:80px;
+    width: 100%;
+    height: 100%;
+    overflow:auto;
+    background-color: rgba(0,100,0,0.8);*/
+    padding-left: 50px;
+    display: none;
+    float: left;
+    vertical-align: top;
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: rgba(255,255,255,0.0);
+
+}
+div#statsForm{
+    position: relative;
+    border: 1px solid #888;
+    border-radius: 11px 11px 10px 10px;
+    background-color: rgba(150,175,150,0.8);
+    padding-top: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 150px;
+    width: 450px;
+    /*width: 80%;*/
+    margin: auto;
+    box-shadow: 15px 10px 108px 0 rgba(200,100,2,0.7), 0px 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration:0.4s;
+}
+div.playerStats{
+    display: inline-block;
+    font-weight: bold;
+    font-size: 12px;
+    font-family: arial;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 104px;
+    position: relative;
+    text-align: center;
+}
+div#menusection{
+    display: inline-block;
+}
+div#screenswitcher{
+    display: inline-block;
+}
