@@ -27,9 +27,9 @@ public class DCDataSourceConfig {
     public DriverManagerDataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://192.168.2.201:3306/WebUser");
-        dataSource.setUsername("DBAdmin");
-        dataSource.setPassword("!DB22dm4n@");
+        dataSource.setUrl("jdbc:mysql://DB IP:portNumber/DatabaseName");
+        dataSource.setUsername("username");
+        dataSource.setPassword("password");
         return dataSource;
     }
 }

@@ -38,8 +38,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class UserController {
     
-    //@Autowired
-    //UserDao userDao;
     @Autowired
     HttpServletRequest req;
     
@@ -79,17 +77,11 @@ public class UserController {
             model.addAttribute("msg","please make sure passwords are the same");
             return "redirect:/register";
         }
-//        model.addAttribute("prm",req.getParameterNames());
-//        return "index2";
     }
     @RequestMapping(value="/posts/{userid}", method=RequestMethod.GET)
     public ModelAndView getPosts(@PathVariable Integer userid){
         ModelAndView model = new ModelAndView("posting","command",new UserPost());
         String name = SecurityContextHolder.getContext().getAuthentication().getName();
-        //User u = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        /*List<UserPost> userPosts = userPostDao.getUserPost(userid);
-        model.addObject("postings", userPosts);
-        model.addObject("postings",userPostDao.getFullPosts());*/
         model.addObject("postings",userPostDao.getUserPost(userid));
         model.addObject("user",name);
         model.addObject("profile",userProfileDao.getProfile(name).get(0).get("avatar"));

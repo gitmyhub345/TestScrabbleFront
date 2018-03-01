@@ -477,7 +477,7 @@ var gameName;
 var lastBoardUpdateTiles;
 var myscore = 0;
 //window.onload = init;
-var socket = new WebSocket("ws://192.168.0.9:8084/DragonWorld/scrabble/game/req");
+var socket = new WebSocket("ws://your url to socket on server");
 
 socket.onopen = function (evt){
     onOpen(evt);

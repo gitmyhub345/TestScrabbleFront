@@ -26,22 +26,6 @@ import org.springframework.test.context.web.WebAppConfiguration;
  *
  * @author Rider1
  */
-/*
-@Configuration
-class IContextConfiguration {
-
-    // this bean will be injected into the OrderServiceTest class
-    @Bean(name="dataSource")
-    public DriverManagerDataSource dataSource(){
-    DriverManagerDataSource dataSource = new DriverManagerDataSource();
-    dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-    dataSource.setUrl("jdbc:mysql://192.168.1.201:3306/WebUser");
-    dataSource.setUsername("DBAdmin");
-    dataSource.setPassword("!DB22dm4n@");
-    return dataSource;
-    }
-}
-*/
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes={DCDataSourceConfig.class})
 //@ContextConfiguration(classes={IContextConfiguration.class})

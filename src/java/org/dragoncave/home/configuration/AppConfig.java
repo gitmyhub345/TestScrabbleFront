@@ -26,8 +26,6 @@ import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.dragoncave.home.models.User;
 import org.dragoncave.home.service.RandID;
 import org.dragoncave.home.security.DCSercurityConfig;
-import org.dragoncave.home.message.CaveMessages;
-import org.dragoncave.home.comp.DCCart;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -117,56 +115,5 @@ public class AppConfig extends WebMvcConfigurerAdapter{
         RandID r= new RandID();
         return r;
     }
-    @Bean(name="caveMessage")
-    public CaveMessages caveMessage(){
-        return new CaveMessages();
-    }
     
-    @Bean(name="cart")
-    public DCCart DCCart(){
-        return new DCCart();
-    }
-}   
-    
-    /**
-     * Thymeleaf integration below this
-     * will need to include thymeleaf.jar (thymeleaf-3.0.2.RELEASE.jar) 
-     * and thymeleaf-Spring4.jar  thymeleaf-spring4-3.0.2.RELEASE.jar)
-     */
-/*    
-    @Configuration
-    @EnableWebMvc
-    @ComponentScan(basePackages = "org.dragoncave.home")
-    public class ThymeleafConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
-
-      private ApplicationContext applicationContext;
-
-      public void setApplicationContext(ApplicationContext applicationContext) {
-        this.applicationContext = applicationContext;
-      }
-
-      @Bean
-      public ViewResolver viewResolver() {
-        ThymeleafViewResolver resolver = new ThymeleafViewResolver();
-        resolver.setTemplateEngine(templateEngine());
-        resolver.setCharacterEncoding("UTF-8");
-        return resolver;
-      }
-
-      @Bean
-      public TemplateEngine templateEngine() {
-        SpringTemplateEngine engine = new SpringTemplateEngine();
-        engine.setEnableSpringELCompiler(true);
-        engine.setTemplateResolver(templateResolver());
-        return engine;
-      }
-
-      private ITemplateResolver templateResolver() {
-        SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
-        resolver.setApplicationContext(applicationContext);
-        resolver.setPrefix("/WEB-INF/templates/");
-        resolver.setTemplateMode(TemplateMode.HTML);
-        return resolver;
-      }
-    }
-*/
+}

@@ -26,8 +26,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.dragoncave.home.dao.UserPostDao;
-import org.dragoncave.home.message.CaveMessages;
-import org.dragoncave.home.comp.DCCart;
+
 
 import org.springframework.context.annotation.Bean;
 
@@ -36,11 +35,6 @@ public class LoginController {
     @Autowired
     UserPostDao upDao;
     
-    @Autowired
-    CaveMessages cm;
-    
-    @Autowired
-    DCCart cart;
     @RequestMapping(value="/", method=RequestMethod.GET)
     public String home(){
 //        return new ModelAndView("welcome");
@@ -85,10 +79,7 @@ public class LoginController {
             model.addObject("msg", "You've been logged out successfully.");
         }
 //        if (msg != null)
-            model.addObject("msg2",cm.getMessage(500));
         model.addObject("posts",list);
-        model.addObject("cart",cart);
-//        model.addObject("postmsg", "hello");
         return model;
     }
 }
